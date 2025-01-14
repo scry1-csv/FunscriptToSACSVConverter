@@ -15,16 +15,16 @@ namespace FunscriptToSACSVConverter
             List<SACSV.ScriptRow> result = [new SACSV.ScriptRow { InternalTime = 0, Direction = false, Power = 0 }];
             bool start = false;
 
-            foreach (var action in funscript.actions)
+            foreach (var action in funscript.Actions)
             {
-                if (action.pos == 0 && !start)
+                if (action.Pos == 0 && !start)
                     continue;
 
                 start = true;
 
-                int a = (action.pos - 50) * 2;
+                int a = (action.Pos - 50) * 2;
 
-                int time = action.at / 100;
+                int time = action.At / 100;
                 bool direction = a > 0;
                 int power = Math.Abs(a);
                 if (power > 100)

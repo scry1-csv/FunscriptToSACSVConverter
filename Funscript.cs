@@ -4,24 +4,29 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace FunscriptToSACSVConverter
 {
-#pragma warning disable IDE1006 // 命名スタイル
-#pragma warning disable CS8981 // 型名には、小文字の ASCII 文字のみが含まれています。このような名前は、プログラミング言語用に予約されている可能性があります。
     public class Funscript
     {
-        public string version { get; set; } = "";
-        public bool inverted { get; set; }
-        public int range { get; set; }
-        public List<action> actions { get; set; } = new List<action>();
+        [JsonPropertyName("version")]
+        public string Version { get; set; } = "";
+        [JsonPropertyName("inverted")]
+        public bool Inverted { get; set; }
+        [JsonPropertyName("range")]
+        public int Range { get; set; }
+        [JsonPropertyName("actions")]
+        public List<Action> Actions { get; set; } = new List<Action>();
 
-        public class action
+        public class Action
         {
-            public int pos { get; set; }
-            public int at { get; set; }
-            public override string ToString() => $"pos: {pos}, at: {at}";
+            [JsonPropertyName("pos")]
+            public int Pos { get; set; }
+            [JsonPropertyName("at")]
+            public int At { get; set; }
+            public override string ToString() => $"pos: {Pos}, at: {At}";
         }
 
         public static Funscript LoadJson(string path)
@@ -39,6 +44,4 @@ namespace FunscriptToSACSVConverter
                 return result;
         }
     }
-#pragma warning restore IDE1006
-#pragma warning restore CS8981 // 型名には、小文字の ASCII 文字のみが含まれています。このような名前は、プログラミング言語用に予約されている可能性があります。
 }
