@@ -5,6 +5,9 @@ FunscriptをUFOSA・A10サイクロンSA用のCSVに変換するためのWindowsアプリです。
 
 UFOSA・A10サイクロンSA用のCSVを作成するツールとして、[OpenFunScripter](https://github.com/OpenFunscripter/OFS)等を利用できるようにすることを目的として制作しました。
 
+## ダウンロード方法
+このページ右側の「Releases」から「v1.0.0」をクリックし、移動先のページから「FunscriptToSACSVConverter.v1.0.0.zip」をクリックしてください。
+
 ## 使い方
 exeを起動し、変換したいFunscriptをウインドウにドラッグ&ドロップしてください。
 exeと同じフォルダに、result.csv という名前で変換したスクリプトが出力されます。
